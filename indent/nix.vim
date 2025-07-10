@@ -21,8 +21,9 @@ set cpo&vim
 let s:skip_syntax = '\%(Comment\|String\)$'
 let s:binding_open = '\%(\<let\>\)'
 let s:binding_close = '\%(\<in\>\)'
-let s:block_open  = '\%({\|[\)'
-let s:block_close = '\%(}\|]\)'
+
+let s:block_open  = '\%({\|[\|(\)'
+let s:block_close = '\%(}\|]\|)\)'
 
 function! GetNixIndent()
   let lnum = prevnonblank(v:lnum - 1)
