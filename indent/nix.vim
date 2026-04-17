@@ -9,7 +9,7 @@ endif
 let b:did_indent = 1
 
 setlocal indentexpr=GetNixIndent()
-setlocal indentkeys+=0=then,0=else,0=inherit,0=in,*<Return>
+setlocal indentkeys+=0=then,0=else,0=inherit,*<Return>
 
 if exists("*GetNixIndent")
   finish
@@ -62,10 +62,6 @@ function! GetNixIndent()
     endif
 
     if last_line =~ '\<let\s*$'
-      let ind += &sw
-    endif
-
-    if last_line =~ '^\<in\s*$'
       let ind += &sw
     endif
 
